@@ -4,8 +4,8 @@ float min;
 float max; 
 };
 
-extern int emailAlertCallCount;
-extern int ledAlertCallCount;
+int emailAlertCallCount;
+int ledAlertCallCount;
 
 struct Stats compute_statistics(const float* numberset, int setlength);
 
