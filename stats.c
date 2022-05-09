@@ -16,16 +16,17 @@ struct Stats compute_statistics(const float* numberset, int setlength) {
 }
 
 void emailAlerter() {
-    emailAlertCallCount = 1;
+    emailAlertCallCount++;
 }
 
 void ledAlerter() {
-    ledAlertCallCount = 1; 
+    ledAlertCallCount++; 
 }
 
 void check_and_alert(float maxThreshold, alerter_funcptr alerters[], struct Stats computedStats) {
-    if(computedStats.average > maxThreshold) {
+    if(computedStats.max > maxThreshold) {
         (alerters[0])();
         (alerters[1])();
+        computedStats.average = computedStats.max = maxThreshold;
     }
 }
