@@ -27,6 +27,5 @@ void check_and_alert(float maxThreshold, alerter_funcptr alerters[], const struc
     if(computedStats.max > maxThreshold) {
         (alerters[0])();
         (alerters[1])();
-        computedStats.max = maxThreshold;
     }
 }
